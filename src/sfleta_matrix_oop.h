@@ -10,29 +10,29 @@ using std::invalid_argument;
 using std::out_of_range;
 using std::vector;
 
-class S21Matrix {
+class sfleta_Matrix {
  private:
     int _rows, _cols;
     double** _matrix;
 
  public:
     // Конструкторы и деструкторы
-    S21Matrix();
-    S21Matrix(int rows, int cols);
-    S21Matrix(const S21Matrix& other);
-    S21Matrix(S21Matrix&& other);
-    ~S21Matrix();
+    sfleta_Matrix();
+    sfleta_Matrix(int rows, int cols);
+    sfleta_Matrix(const sfleta_Matrix& other);
+    sfleta_Matrix(sfleta_Matrix&& other);
+    ~sfleta_Matrix();
 
     // Операции над матрицами
-    bool eq_matrix(const S21Matrix& other);
-    void sum_matrix(const S21Matrix& other);
-    void sub_matrix(const S21Matrix& other);
+    bool eq_matrix(const sfleta_Matrix& other);
+    void sum_matrix(const sfleta_Matrix& other);
+    void sub_matrix(const sfleta_Matrix& other);
     void mul_number(const double num);
-    void mul_matrix(const S21Matrix& other);
-    S21Matrix transpose();
+    void mul_matrix(const sfleta_Matrix& other);
+    sfleta_Matrix transpose();
     double determinant();
-    S21Matrix calc_complements();
-    S21Matrix inverse_matrix();
+    sfleta_Matrix calc_complements();
+    sfleta_Matrix inverse_matrix();
 
     // Акцессоры, мутаторы
     inline int getRows() { return _rows; }
@@ -43,23 +43,23 @@ class S21Matrix {
     double getElem(int i, int j);
 
     // Операторы
-    S21Matrix operator+(const S21Matrix &other);
-    S21Matrix operator-(const S21Matrix &other);
-    S21Matrix operator*(const S21Matrix &other);
-    S21Matrix operator*(const double num);
-    friend S21Matrix operator*(const double num, const S21Matrix &other);
-    bool operator==(const S21Matrix &other);
-    S21Matrix& operator=(const S21Matrix &other);
-    void operator+=(const S21Matrix &other);
-    void operator-=(const S21Matrix &other);
-    void operator*=(const S21Matrix &other);
+    sfleta_Matrix operator+(const sfleta_Matrix &other);
+    sfleta_Matrix operator-(const sfleta_Matrix &other);
+    sfleta_Matrix operator*(const sfleta_Matrix &other);
+    sfleta_Matrix operator*(const double num);
+    friend sfleta_Matrix operator*(const double num, const sfleta_Matrix &other);
+    bool operator==(const sfleta_Matrix &other);
+    sfleta_Matrix& operator=(const sfleta_Matrix &other);
+    void operator+=(const sfleta_Matrix &other);
+    void operator-=(const sfleta_Matrix &other);
+    void operator*=(const sfleta_Matrix &other);
     void operator*=(const double num);
     double operator()(int i, int j);
 
 // Дополнительные функции
  private:
     void remove_matrix();
-    S21Matrix getSubMatrix(int rowForDelete, int columnForDelete);
+    sfleta_Matrix getSubMatrix(int rowForDelete, int columnForDelete);
 
  public:
     double** allocateMemory(int rows, int cols);
@@ -67,6 +67,6 @@ class S21Matrix {
     void print_Matrix();
     void fill_matrix_from_vector(vector<double> vect);
 };
-S21Matrix operator*(const double num, const S21Matrix &other);
+sfleta_Matrix operator*(const double num, const sfleta_Matrix &other);
 
 #endif  // SRC_sfleta_MATRIX_OOP_H_
