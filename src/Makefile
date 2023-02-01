@@ -1,16 +1,16 @@
-PROJECTNAME=s21_matrix_oop
+PROJECTNAME=sfleta_matrix_oop
 .PHONY: all clean test $(PROJECTNAME).a gcov_report linter cppcheck style_check
 SHELL := /bin/bash
 
 CC = g++
-SRC = s21_matrix_oop.cpp
+SRC = sfleta_matrix_oop.cpp
 OBJS = $(SRC:.cpp=.o)
 CFLAGS = -std=c++17 -lstdc++ -Wall -Werror -Wextra
 EXTRAWARN_FLAGS = -Wpedantic -Wshadow -Wuninitialized 
 DEBUG_FLAG = -g
 MAIN_SRC = main.cpp
 GCOVFLAG = --coverage
-LIB_NAME = s21_matrix_oop.a
+LIB_NAME = sfleta_matrix_oop.a
 TEST_SRCS = test.cpp
 LDFLAGS += -lgtest
 

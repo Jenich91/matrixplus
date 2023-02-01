@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "s21_matrix_oop.h"
+#include "sfleta_matrix_oop.h"
 
 TEST(constructor_test, empty_constructor) {
     S21Matrix Matrix;
